@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Proyecto391</string>
+
+    <!--Methods Name-->
+    <string name="congruencial_mixto">CONGRUENCIAL MIXTO</string>
+    <string name="congruencial_multiplicativo">CONGRUENCIAL MULTIPLICATIVO</string>
+    <string name="binario">SISTEMA BINARIO</string>
+    <string name="cuadrados_medios">CUADRADOS MEDIOS</string>
+</resources>
