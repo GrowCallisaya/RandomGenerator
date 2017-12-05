@@ -14,6 +14,7 @@ import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.umsa.proyecto391.views.XEditText;
 
 import butterknife.ButterKnife;
+import es.dmoral.toasty.Toasty;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView cardMethod2;
     CardView cardMethod3;
     CardView cardMethod4;
+    FancyButton cngBinario;
+    FancyButton cngDecimal;
+
     private BottomDialog bar;
     private View formViewCM;
     private View formViewCNG;
@@ -39,11 +43,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cardMethod1 = (CardView) findViewById(R.id.card_method1); 
         cardMethod2 = (CardView) findViewById(R.id.card_method2); 
         cardMethod3 = (CardView) findViewById(R.id.card_method3); 
-        cardMethod4 = (CardView) findViewById(R.id.card_method4); 
+        cardMethod4 = (CardView) findViewById(R.id.card_method4);
+        cngBinario = (FancyButton) findViewById(R.id.cng_binario);
+        cngDecimal = (FancyButton) findViewById(R.id.cng_decimal);
         cardMethod1.setOnClickListener(this);
         cardMethod2.setOnClickListener(this);
         cardMethod3.setOnClickListener(this);
-        cardMethod4.setOnClickListener(this);
+        cngBinario.setOnClickListener(this);
+        cngDecimal.setOnClickListener(this);
 
     }
 
@@ -88,9 +95,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupFormCNG() {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         formViewCNG = inflater.inflate(R.layout.form_fragment_cng,null);
+
         final XEditText txtSemilla = (XEditText) formViewCNG.findViewById(R.id.txt_semilla);
         final XEditText txtMultiply = (XEditText) formViewCNG.findViewById(R.id.txt_multiply);
-        final XEditText txtCtte= (XEditText) formViewCNG.findViewById(R.id.txt_ctte);
         final XEditText txtModule= (XEditText) formViewCNG.findViewById(R.id.txt_module);
         FancyButton btn_calculate = (FancyButton) formViewCNG.findViewById(R.id.btn_calculate);
         btn_calculate.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +106,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i = new Intent(MainActivity.this, TableActivityCNG.class);
                 i.putExtra("SEMILLA",txtSemilla.getText().toString());
                 i.putExtra("MULTIPLY",txtMultiply.getText().toString());
-                i.putExtra("CTTE",txtCtte.getText().toString());
                 i.putExtra("MODULE",txtModule.getText().toString());
                 startActivity(i);
             }
@@ -147,15 +153,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
             case R.id.card_method3:
-                setupFormCNG();
-                bar = new BottomDialog.Builder(this)
-                        .setCustomView(formViewCNG)
-                        .show();
+                Toasty.info(this,"Seleccione BINARIO o DECIMAL",Toast.LENGTH_LONG).show();
                 break;
             case R.id.card_method4:
                 setupFormSB();
                 bar = new BottomDialog.Builder(this)
                         .setCustomView(formViewSB)
+                        .show();
+                break;
+
+            case R.id.cng_binario:
+
+                break;
+            case R.id.cng_decimal:
+                setupFormCNG();
+                bar = new BottomDialog.Builder(this)
+                        .setCustomView(formViewCNG)
                         .show();
                 break;
             default:

@@ -43,13 +43,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:text="11"/>
-    <com.umsa.proyecto391.views.XTextViewBold
-        android:id="@+id/field_u_i"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="4"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"

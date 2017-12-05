@@ -8,7 +8,7 @@
     tools:context="com.umsa.proyecto391.TableActivityCM">
 
     <include layout="@layout/toolbar"/>
-
+v
     <!--Tabs-->
     <TableLayout
         android:layout_width="match_parent"
@@ -69,13 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="X_(n+1)"/>
-        <com.umsa.proyecto391.views.XTextViewBold
-            android:id="@+id/field_u_i"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="u_i"/>
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

@@ -9,7 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.umsa.proyecto391.adapters.AdapterTableCNG;
+import com.umsa.proyecto391.adapters.AdapterTableMIX;
 import com.umsa.proyecto391.model.DatoCNG;
+import com.umsa.proyecto391.model.DatoMIX;
 import com.umsa.proyecto391.views.XTextView;
 import com.umsa.proyecto391.views.XTextViewBold;
 
@@ -20,13 +22,13 @@ import java.util.List;
 public class TableActivityMIX extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private AdapterTableCNG adapter;
+    private AdapterTableMIX adapter;
     private String semilla;
     private String ctte;
     private String module;
     private String multiply;
 
-    private List<DatoCNG> datos = new ArrayList<>();
+    private List<DatoMIX> datos = new ArrayList<>();
     private String mostOcurred="0.0";
 
     @Override
@@ -61,7 +63,7 @@ public class TableActivityMIX extends AppCompatActivity {
             }
 
             //Adding to our DataStorage
-            datos.add(new DatoCNG(String.valueOf(i),String.valueOf(Xn),String.valueOf(Xn_1),String.valueOf(U_i)));
+            datos.add(new DatoMIX(String.valueOf(i),String.valueOf(Xn),String.valueOf(Xn_1),String.valueOf(U_i)));
             Log.e("CONGRUENTES MIXTOS",i+" , "+Xn+" , "+Xn_1+" , "+U_i);
 
             ocurrences.add(String.valueOf(U_i));
@@ -130,7 +132,7 @@ public class TableActivityMIX extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         //Nuevo Adaptador
-        adapter = new AdapterTableCNG(datos,mostOcurred);
+        adapter = new AdapterTableMIX(datos,mostOcurred);
         recyclerView.setAdapter(adapter);
     }
 }
