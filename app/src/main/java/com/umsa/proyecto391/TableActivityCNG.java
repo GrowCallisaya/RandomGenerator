@@ -13,6 +13,7 @@ import com.umsa.proyecto391.model.DatoCNG;
 import com.umsa.proyecto391.model.Divisor;
 import com.umsa.proyecto391.views.XTextView;
 import com.umsa.proyecto391.views.XTextViewBold;
+import com.umsa.proyecto391.views.XTextViewLight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class TableActivityCNG extends AppCompatActivity {
 
     private List<DatoCNG> datos = new ArrayList<>();
     private String mostOcurred="0.0";
+    private String desarrollo="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class TableActivityCNG extends AppCompatActivity {
                 moduleFake= moduleFake/10;
             }
             Log.e("D", d+"");
+            desarrollo+="     d = "+d+"\n";
 
             //Validating d
             if (d>=5){
@@ -78,6 +81,8 @@ public class TableActivityCNG extends AppCompatActivity {
     }
 
     private void startMethodMINOR(int Xo, int a, int m, int d) {
+
+        desarrollo+="     >>>>>> METODO LAMBDA"+"\n";
         int Xn = Xo;
         List<String> ocurrences = new ArrayList<>();
         //Getting the descomposicition
@@ -101,6 +106,7 @@ public class TableActivityCNG extends AppCompatActivity {
         }
 
         for (Divisor divisor1: divisores){
+
             Log.e("DIVISORES", divisor1.valor+" "+divisor1.seq);
         }
 
@@ -111,32 +117,39 @@ public class TableActivityCNG extends AppCompatActivity {
             //CASE 1 (lambda(2))
             if ((int) Math.pow(di.valor,di.seq) ==2 && !di.state){
                 mcm.add(1);
+                desarrollo+="        ∆("+di.valor+") = "+1+"\n";
                 di.state =true;
             }
             //CASE 1 (lambda(4))
             else if ((int)Math.pow(di.valor,di.seq) == 4 && !di.state) {
                 mcm.add(2);
+                desarrollo+="        ∆("+di.valor+"^"+di.seq+") =  ∆(4) = "+2+"\n";
                 di.state =true;
             }
             //CASE 2 (lambda(2^d))
             else if (di.seq >=3 && !di.state && di.valor %2==0){
                 mcm.add((int) Math.pow(2,di.seq-2));
+                desarrollo+="        ∆("+di.valor+"^"+di.seq+") = "+"2^("+di.seq+"-2) = "+(int) Math.pow(2,di.seq-2)+"\n";
                 di.state =true;
             }
             //CASE 3 (lambda(p^d-1))
             else{
                 mcm.add((int) Math.pow(di.valor,di.seq-1) *(di.valor-1));
+                desarrollo+="        ∆("+di.valor+"^"+di.seq+") = "+di.valor+"^("+di.seq+"-1) * ("+di.valor+"-1) = "+(int) Math.pow(di.valor,di.seq-1) *(di.valor-1)+"\n";
                 di.state =true;
             }
         }
 
         //Getting the mcm
+        desarrollo+="     >>>>>> MCM: "+mcm+"\n";
         Log.e("MCM", mcm+"");
         int Period = findMCM(mcm.get(0),mcm.get(1));
 
         //Settingg the Period
         XTextView table_period = (XTextView) findViewById(R.id.table_period);
+        XTextViewLight dev = (XTextViewLight) findViewById(R.id.desarrollo);
         table_period.setText("PERIODO: "+Period);
+        dev.setText(desarrollo);
 
 
         //Getting the Table
@@ -215,7 +228,7 @@ public class TableActivityCNG extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         XTextViewBold toolbarTitle = (XTextViewBold) findViewById(R.id.toolbar_name);
-        toolbarTitle.setText("CUADRADOS PERFECTOS");
+        toolbarTitle.setText("CONGRUENCIAL MULTIPLICATIVO");
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
     }

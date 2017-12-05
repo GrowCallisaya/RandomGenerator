@@ -132,7 +132,7 @@ public class TableActivityCM extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         XTextViewBold toolbarTitle = (XTextViewBold) findViewById(R.id.toolbar_name);
-        toolbarTitle.setText("CUADRADOS PERFECTOS");
+        toolbarTitle.setText("CUADRADOS MEDIOS");
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
     }

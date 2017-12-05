@@ -120,7 +120,7 @@ public class TableActivityMIX extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         XTextViewBold toolbarTitle = (XTextViewBold) findViewById(R.id.toolbar_name);
-        toolbarTitle.setText("CONGRUENCIALES MIXTOS");
+        toolbarTitle.setText("CONGRUENCIAL MIXTO");
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
     }

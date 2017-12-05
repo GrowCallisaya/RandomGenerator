@@ -6,4 +6,11 @@
     <string name="congruencial_multiplicativo">CONGRUENCIAL MULTIPLICATIVO</string>
     <string name="binario">SISTEMA BINARIO</string>
     <string name="cuadrados_medios">CUADRADOS MEDIOS</string>
+
+
+    <!--Methods Requirements-->
+    <string name="requisitos1">REQUISITOS: \nXo = (2*n) cifras</string>
+    <string name="requisitos2">REQUISITOS: \na>0, c>0, m>a y m>c</string>
+    <string name="requisitos3">REQUISITOS: \na=200t+p m= 10^d</string>
+    <string name="requisitos4">REQUISITOS: \nXo impar y multiplo a m \na=8t+3, m =2^d</string>
 </resources>

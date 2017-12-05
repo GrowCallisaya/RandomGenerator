@@ -11,5 +11,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="@android:color/white"
-        android:text="Metodos 391"/>
+        android:text="GENERADOR DE NUMEROS ALEATORIOS"/>
 </android.support.v7.widget.Toolbar>

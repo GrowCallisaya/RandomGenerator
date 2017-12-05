@@ -44,13 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cardMethod2 = (CardView) findViewById(R.id.card_method2); 
         cardMethod3 = (CardView) findViewById(R.id.card_method3); 
         cardMethod4 = (CardView) findViewById(R.id.card_method4);
-        cngBinario = (FancyButton) findViewById(R.id.cng_binario);
-        cngDecimal = (FancyButton) findViewById(R.id.cng_decimal);
         cardMethod1.setOnClickListener(this);
         cardMethod2.setOnClickListener(this);
         cardMethod3.setOnClickListener(this);
-        cngBinario.setOnClickListener(this);
-        cngDecimal.setOnClickListener(this);
+        cardMethod4.setOnClickListener(this);
 
     }
 
@@ -95,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupFormCNG() {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         formViewCNG = inflater.inflate(R.layout.form_fragment_cng,null);
-
         final XEditText txtSemilla = (XEditText) formViewCNG.findViewById(R.id.txt_semilla);
         final XEditText txtMultiply = (XEditText) formViewCNG.findViewById(R.id.txt_multiply);
         final XEditText txtModule= (XEditText) formViewCNG.findViewById(R.id.txt_module);
@@ -153,22 +149,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
             case R.id.card_method3:
-                Toasty.info(this,"Seleccione BINARIO o DECIMAL",Toast.LENGTH_LONG).show();
+                setupFormCNG();
+                bar = new BottomDialog.Builder(this)
+                        .setCustomView(formViewCNG)
+                        .show();
                 break;
             case R.id.card_method4:
                 setupFormSB();
                 bar = new BottomDialog.Builder(this)
                         .setCustomView(formViewSB)
-                        .show();
-                break;
-
-            case R.id.cng_binario:
-
-                break;
-            case R.id.cng_decimal:
-                setupFormCNG();
-                bar = new BottomDialog.Builder(this)
-                        .setCustomView(formViewCNG)
                         .show();
                 break;
             default:

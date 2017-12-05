@@ -35,12 +35,20 @@
                 android:layout_height="match_parent">
 
                 <com.umsa.proyecto391.views.XTextViewBold
+                    android:id="@+id/titulo1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:text="@string/cuadrados_medios"
                     android:textColor="@android:color/white"
                     android:textSize="18sp" />
+                <com.umsa.proyecto391.views.XTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:textColor="@android:color/white"
+                    android:layout_below="@id/titulo1"
+                    android:text="@string/requisitos1"/>
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -69,12 +77,20 @@
                 android:layout_height="match_parent">
 
                 <com.umsa.proyecto391.views.XTextViewBold
+                    android:id="@+id/titulo2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:text="@string/congruencial_mixto"
                     android:textColor="@android:color/white"
                     android:textSize="18sp" />
+                <com.umsa.proyecto391.views.XTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:textColor="@android:color/white"
+                    android:layout_below="@id/titulo2"
+                    android:text="@string/requisitos2"/>
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -104,6 +120,7 @@
                 android:layout_height="match_parent">
 
                 <com.umsa.proyecto391.views.XTextViewBold
+                    android:id="@+id/titulo3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -113,6 +130,13 @@
                     android:text="@string/congruencial_multiplicativo"
                     android:textColor="@android:color/white"
                     android:textSize="18sp" />
+                <com.umsa.proyecto391.views.XTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_below="@id/titulo3"
+                    android:textColor="@android:color/white"
+                    android:text="@string/requisitos3"/>
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -120,32 +144,7 @@
                     android:layout_margin="16dp"
                     android:src="@drawable/method3"/>
 
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/cng_binario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:text="BINARIO"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginRight="8dp"
-                    fancy:fb_textColor="#ffe641"
-                    fancy:fb_defaultColor="#00ffffff"
-                    fancy:fb_focusColor="@color/colorPrimaryDark"/>
 
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/cng_decimal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@id/cng_binario"
-                    android:layout_alignParentBottom="true"
-                    android:text="DECIMAL"
-                    android:textSize="16dp"
-                    android:layout_margin="8dp"
-                    fancy:fb_textColor="#ffe641"
-                    fancy:fb_defaultColor="#00ffffff"
-                    fancy:fb_focusColor="@color/colorPrimaryDark"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
@@ -169,12 +168,20 @@
                 android:layout_height="match_parent">
 
                 <com.umsa.proyecto391.views.XTextViewBold
+                    android:id="@+id/titulo4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:text="@string/binario"
                     android:textColor="@android:color/white"
                     android:textSize="18sp" />
+                <com.umsa.proyecto391.views.XTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_below="@id/titulo4"
+                    android:textColor="@android:color/white"
+                    android:text="@string/requisitos4"/>
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"

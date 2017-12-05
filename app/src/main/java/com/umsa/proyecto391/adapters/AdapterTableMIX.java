@@ -33,7 +33,7 @@ public class AdapterTableMIX extends RecyclerView.Adapter<RecyclerView.ViewHolde
      **/
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new TableViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_table_cng, parent, false));
+        return new TableViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_table_mix, parent, false));
     }
 
     @Override
