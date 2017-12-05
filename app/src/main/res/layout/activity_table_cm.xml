@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.umsa.proyecto391.TableActivity">
+    tools:context="com.umsa.proyecto391.TableActivityCM">
 
     <include layout="@layout/toolbar"/>
 
-    <!--Tabs-->
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -61,8 +60,13 @@
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
                 android:text="X_n"/>
-
         </LinearLayout>
+        <com.umsa.proyecto391.views.XTextViewBold
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="X_n^2"/>
         <com.umsa.proyecto391.views.XTextViewBold
             android:layout_width="0dp"
             android:layout_weight="1"
